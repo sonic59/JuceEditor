@@ -23,7 +23,7 @@
 #define __JUCER_HEADER_WINDOWCOMPONENT_WINDOWCOMPONENT_88D60227__
 
 //[Headers]     -- You can add your own extra header files here --
-#include "../JuceLibraryCode/JuceHeader.h"
+#include "juce.h"
 //[/Headers]
 
 

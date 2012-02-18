@@ -98,7 +98,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblWordWrap = new Label (L"lblWordWrap",
                                                 L"Word Wrap:"));
-    lblWordWrap->setFont (Font (15.0000f));
+    lblWordWrap->setFont (Font (15.0000f, Font::plain));
     lblWordWrap->setJustificationType (Justification::centredLeft);
     lblWordWrap->setEditable (false, false, false);
     lblWordWrap->setColour (TextEditor::textColourId, Colours::black);
@@ -106,7 +106,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblReadingDirection = new Label (L"lblReadingDirection",
                                                         L"Reading Direction:"));
-    lblReadingDirection->setFont (Font (15.0000f));
+    lblReadingDirection->setFont (Font (15.0000f, Font::plain));
     lblReadingDirection->setJustificationType (Justification::centredLeft);
     lblReadingDirection->setEditable (false, false, false);
     lblReadingDirection->setColour (TextEditor::textColourId, Colours::black);
@@ -114,7 +114,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblJustification = new Label (L"lblJustification",
                                                      L"Justification:"));
-    lblJustification->setFont (Font (15.0000f));
+    lblJustification->setFont (Font (15.0000f, Font::plain));
     lblJustification->setJustificationType (Justification::centredLeft);
     lblJustification->setEditable (false, false, false);
     lblJustification->setColour (TextEditor::textColourId, Colours::black);
@@ -122,7 +122,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblLineSpacing = new Label (L"lblLineSpacing",
                                                    L"Line Spacing:"));
-    lblLineSpacing->setFont (Font (15.0000f));
+    lblLineSpacing->setFont (Font (15.0000f, Font::plain));
     lblLineSpacing->setJustificationType (Justification::centredLeft);
     lblLineSpacing->setEditable (false, false, false);
     lblLineSpacing->setColour (TextEditor::textColourId, Colours::black);
@@ -160,7 +160,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblFontFamily = new Label (L"lblFontFamily",
                                                   L"Font Family:"));
-    lblFontFamily->setFont (Font (15.0000f));
+    lblFontFamily->setFont (Font (15.0000f, Font::plain));
     lblFontFamily->setJustificationType (Justification::centredLeft);
     lblFontFamily->setEditable (false, false, false);
     lblFontFamily->setColour (TextEditor::textColourId, Colours::black);
@@ -168,7 +168,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblFontStyle = new Label (L"lblFontStyle",
                                                  L"Font Style:"));
-    lblFontStyle->setFont (Font (15.0000f));
+    lblFontStyle->setFont (Font (15.0000f, Font::plain));
     lblFontStyle->setJustificationType (Justification::centredLeft);
     lblFontStyle->setEditable (false, false, false);
     lblFontStyle->setColour (TextEditor::textColourId, Colours::black);
@@ -204,7 +204,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblColor = new Label (L"lblColor",
                                              L"Color:"));
-    lblColor->setFont (Font (15.0000f));
+    lblColor->setFont (Font (15.0000f, Font::plain));
     lblColor->setJustificationType (Justification::centredLeft);
     lblColor->setEditable (false, false, false);
     lblColor->setColour (TextEditor::textColourId, Colours::black);
@@ -215,7 +215,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblCaretPos = new Label (L"lblCaretPos",
                                                 L"Caret Position"));
-    lblCaretPos->setFont (Font (15.0000f));
+    lblCaretPos->setFont (Font (15.0000f, Font::plain));
     lblCaretPos->setJustificationType (Justification::centredLeft);
     lblCaretPos->setEditable (false, false, false);
     lblCaretPos->setColour (TextEditor::textColourId, Colours::black);
@@ -229,7 +229,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblCaretSelStart = new Label (L"lblCaretSelStart",
                                                      L"Selection Start"));
-    lblCaretSelStart->setFont (Font (15.0000f));
+    lblCaretSelStart->setFont (Font (15.0000f, Font::plain));
     lblCaretSelStart->setJustificationType (Justification::centredLeft);
     lblCaretSelStart->setEditable (false, false, false);
     lblCaretSelStart->setColour (TextEditor::textColourId, Colours::black);
@@ -249,7 +249,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblCaretSelEnd = new Label (L"lblCaretSelEnd",
                                                    L"Selection End"));
-    lblCaretSelEnd->setFont (Font (15.0000f));
+    lblCaretSelEnd->setFont (Font (15.0000f, Font::plain));
     lblCaretSelEnd->setJustificationType (Justification::centredLeft);
     lblCaretSelEnd->setEditable (false, false, false);
     lblCaretSelEnd->setColour (TextEditor::textColourId, Colours::black);
@@ -288,7 +288,7 @@ WindowComponent::WindowComponent ()
 
     addAndMakeVisible (lblFontSize = new Label (L"lblFontSize",
                                                 L"Font Size:"));
-    lblFontSize->setFont (Font (15.0000f));
+    lblFontSize->setFont (Font (15.0000f, Font::plain));
     lblFontSize->setJustificationType (Justification::centredLeft);
     lblFontSize->setEditable (false, false, false);
     lblFontSize->setColour (TextEditor::textColourId, Colours::black);

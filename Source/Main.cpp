@@ -47,7 +47,7 @@ public:
     //==============================================================================
     const String getApplicationName()
     {
-        return "JuceFont";
+        return "JuceTextLayoutEditor";
     }
 
     const String getApplicationVersion()
