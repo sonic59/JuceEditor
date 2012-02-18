@@ -26,7 +26,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 //[/Headers]
 
-
+class ColourEditorComponent;
 
 //==============================================================================
 /**
@@ -84,7 +84,7 @@ private:
     ComboBox* cmbFontFamily;
     ComboBox* cmbFontStyle;
     GroupComponent* grpColor;
-    Component* csColor;
+    ColourEditorComponent* ceColor;
     Label* lblColor;
     GroupComponent* grpDbgCaret;
     Label* lblCaretPos;

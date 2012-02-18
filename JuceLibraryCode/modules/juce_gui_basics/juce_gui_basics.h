@@ -340,6 +340,9 @@ namespace juce
 #ifndef __JUCE_TEXTPROPERTYCOMPONENT_JUCEHEADER__
  #include "properties/juce_TextPropertyComponent.h"
 #endif
+#ifndef __JUCE_COLOURSELECTOR_JUCEHEADER__
+ #include "widgets/juce_ColourSelector.h"
+#endif
 #ifndef __JUCE_COMBOBOX_JUCEHEADER__
  #include "widgets/juce_ComboBox.h"
 #endif

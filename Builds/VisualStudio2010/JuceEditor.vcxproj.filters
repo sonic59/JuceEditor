@@ -924,6 +924,9 @@
     <ClCompile Include="..\..\Source\WindowComponent.cpp">
       <Filter>JuceEditor\Source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\JuceLibraryCode\modules\juce_gui_basics\widgets\juce_ColourSelector.cpp">
+      <Filter>Juce Modules\juce_gui_basics\widgets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Source\MainWindow.h">
@@ -1809,6 +1812,15 @@
       <Filter>Juce Library Code</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\WindowComponent.h">
+      <Filter>JuceEditor\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ColourEditorComponent.h">
+      <Filter>JuceEditor\Source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\JuceLibraryCode\modules\juce_gui_basics\widgets\juce_ColourSelector.h">
+      <Filter>Juce Modules\juce_gui_basics\widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\jucer_Colours.h">
       <Filter>JuceEditor\Source</Filter>
     </ClInclude>
   </ItemGroup>

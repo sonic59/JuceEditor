@@ -23,7 +23,7 @@
 //[/Headers]
 
 #include "WindowComponent.h"
-
+#include "ColourEditorComponent.h"
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
 //[/MiscUserDefs]
@@ -48,7 +48,7 @@ WindowComponent::WindowComponent ()
       cmbFontFamily (0),
       cmbFontStyle (0),
       grpColor (0),
-      csColor (0),
+      ceColor (0),
       lblColor (0),
       grpDbgCaret (0),
       lblCaretPos (0),
@@ -209,8 +209,8 @@ WindowComponent::WindowComponent ()
     addAndMakeVisible (grpColor = new GroupComponent (L"grpColor",
                                                       L"Color"));
 
-    addAndMakeVisible (csColor = new Component());
-    csColor->setName (L"csColor");
+    addAndMakeVisible (ceColor = new ColourEditorComponent(false));
+    ceColor->setName (L"ceColor");
 
     addAndMakeVisible (lblColor = new Label (L"lblColor",
                                              L"Color:"));
@@ -422,7 +422,7 @@ WindowComponent::~WindowComponent()
     deleteAndZero (cmbFontFamily);
     deleteAndZero (cmbFontStyle);
     deleteAndZero (grpColor);
-    deleteAndZero (csColor);
+    deleteAndZero (ceColor);
     deleteAndZero (lblColor);
     deleteAndZero (grpDbgCaret);
     deleteAndZero (lblCaretPos);
@@ -501,7 +501,7 @@ void WindowComponent::resized()
     cmbFontFamily->setBounds (464, 48, 240, 24);
     cmbFontStyle->setBounds (464, 80, 240, 24);
     grpColor->setBounds (728, 24, 288, 64);
-    csColor->setBounds (848, 48, 152, 24);
+    ceColor->setBounds (848, 48, 152, 24);
     lblColor->setBounds (736, 48, 48, 24);
     grpDbgCaret->setBounds (728, 184, 288, 120);
     lblCaretPos->setBounds (736, 200, 150, 24);
