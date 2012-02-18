@@ -133,6 +133,9 @@ WindowComponent::WindowComponent ()
     cmbWordWrap->setJustificationType (Justification::centredLeft);
     cmbWordWrap->setTextWhenNothingSelected (String::empty);
     cmbWordWrap->setTextWhenNoChoicesAvailable (L"(no choices)");
+    cmbWordWrap->addItem (L"None", 1);
+    cmbWordWrap->addItem (L"By Word", 2);
+    cmbWordWrap->addItem (L"By Character", 3);
     cmbWordWrap->addListener (this);
 
     addAndMakeVisible (cmbReadingDirection = new ComboBox (L"cmbReadingDirection"));
@@ -140,6 +143,9 @@ WindowComponent::WindowComponent ()
     cmbReadingDirection->setJustificationType (Justification::centredLeft);
     cmbReadingDirection->setTextWhenNothingSelected (String::empty);
     cmbReadingDirection->setTextWhenNoChoicesAvailable (L"(no choices)");
+    cmbReadingDirection->addItem (L"Natural", 1);
+    cmbReadingDirection->addItem (L"Left to Right", 2);
+    cmbReadingDirection->addItem (L"Right to Left", 3);
     cmbReadingDirection->addListener (this);
 
     addAndMakeVisible (cmbJustification = new ComboBox (L"cmbJustification"));
@@ -147,6 +153,10 @@ WindowComponent::WindowComponent ()
     cmbJustification->setJustificationType (Justification::centredLeft);
     cmbJustification->setTextWhenNothingSelected (String::empty);
     cmbJustification->setTextWhenNoChoicesAvailable (L"(no choices)");
+    cmbJustification->addItem (L"Left", 1);
+    cmbJustification->addItem (L"Right", 2);
+    cmbJustification->addItem (L"Centered", 3);
+    cmbJustification->addItem (L"Justified", 4);
     cmbJustification->addListener (this);
 
     addAndMakeVisible (slLineSpacing = new Slider (L"slLineSpacing"));
@@ -281,7 +291,7 @@ WindowComponent::WindowComponent ()
     tbDbgRanges->addListener (this);
 
     addAndMakeVisible (slFontSize = new Slider (L"slFontSize"));
-    slFontSize->setRange (0, 10, 0.01);
+    slFontSize->setRange (0, 256, 0.0001);
     slFontSize->setSliderStyle (Slider::IncDecButtons);
     slFontSize->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     slFontSize->addListener (this);
@@ -380,6 +390,12 @@ WindowComponent::WindowComponent ()
 
 
     //[Constructor] You can add your own custom stuff here..
+    cmbWordWrap->setText("None");
+    cmbReadingDirection->setText("Natural");
+    cmbJustification->setText("Left");
+    cmbFontFamily->addItemList(Font::findAllTypefaceFamilies(), 1);
+    cmbFontFamily->setText("Verdana");
+    slFontSize->setValue(15.0000f);
     //[/Constructor]
 }
 
@@ -553,6 +569,9 @@ void WindowComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     else if (comboBoxThatHasChanged == cmbFontFamily)
     {
         //[UserComboBoxCode_cmbFontFamily] -- add your combo box handling code here..
+        cmbFontStyle->clear();
+        cmbFontStyle->addItemList(Font::findAllTypefaceStyles(cmbFontFamily->getText()), 1);
+        cmbFontStyle->setSelectedItemIndex(0);
         //[/UserComboBoxCode_cmbFontFamily]
     }
     else if (comboBoxThatHasChanged == cmbFontStyle)

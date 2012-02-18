@@ -3,7 +3,7 @@
 
   This is an automatically generated file created by the Jucer!
 
-  Creation date:  18 Feb 2012 12:35:30pm
+  Creation date:  18 Feb 2012 3:40:05pm
 
   Be careful when adding custom code to these files, as only the code within
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
@@ -133,6 +133,9 @@ WindowComponent::WindowComponent ()
     cmbWordWrap->setJustificationType (Justification::centredLeft);
     cmbWordWrap->setTextWhenNothingSelected (String::empty);
     cmbWordWrap->setTextWhenNoChoicesAvailable (L"(no choices)");
+    cmbWordWrap->addItem (L"None", 1);
+    cmbWordWrap->addItem (L"By Word", 2);
+    cmbWordWrap->addItem (L"By Character", 3);
     cmbWordWrap->addListener (this);
 
     addAndMakeVisible (cmbReadingDirection = new ComboBox (L"cmbReadingDirection"));
@@ -140,6 +143,9 @@ WindowComponent::WindowComponent ()
     cmbReadingDirection->setJustificationType (Justification::centredLeft);
     cmbReadingDirection->setTextWhenNothingSelected (String::empty);
     cmbReadingDirection->setTextWhenNoChoicesAvailable (L"(no choices)");
+    cmbReadingDirection->addItem (L"Natural", 1);
+    cmbReadingDirection->addItem (L"Left to Right", 2);
+    cmbReadingDirection->addItem (L"Right to Left", 3);
     cmbReadingDirection->addListener (this);
 
     addAndMakeVisible (cmbJustification = new ComboBox (L"cmbJustification"));
@@ -147,6 +153,10 @@ WindowComponent::WindowComponent ()
     cmbJustification->setJustificationType (Justification::centredLeft);
     cmbJustification->setTextWhenNothingSelected (String::empty);
     cmbJustification->setTextWhenNoChoicesAvailable (L"(no choices)");
+    cmbJustification->addItem (L"Left", 1);
+    cmbJustification->addItem (L"Right", 2);
+    cmbJustification->addItem (L"Centered", 3);
+    cmbJustification->addItem (L"Justified", 4);
     cmbJustification->addListener (this);
 
     addAndMakeVisible (slLineSpacing = new Slider (L"slLineSpacing"));
@@ -281,7 +291,7 @@ WindowComponent::WindowComponent ()
     tbDbgRanges->addListener (this);
 
     addAndMakeVisible (slFontSize = new Slider (L"slFontSize"));
-    slFontSize->setRange (0, 10, 0.01);
+    slFontSize->setRange (0, 256, 0.0001);
     slFontSize->setSliderStyle (Slider::IncDecButtons);
     slFontSize->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
     slFontSize->addListener (this);
@@ -795,13 +805,16 @@ BEGIN_JUCER_METADATA
          fontsize="15" bold="0" italic="0" justification="33"/>
   <COMBOBOX name="cmbWordWrap" id="31036756d8ef895d" memberName="cmbWordWrap"
             virtualName="" explicitFocusOrder="0" pos="176 48 150 24" editable="0"
-            layout="33" items="" textWhenNonSelected="" textWhenNoItems="(no choices)"/>
+            layout="33" items="None&#10;By Word&#10;By Character" textWhenNonSelected=""
+            textWhenNoItems="(no choices)"/>
   <COMBOBOX name="cmbReadingDirection" id="8e60ff984659f976" memberName="cmbReadingDirection"
             virtualName="" explicitFocusOrder="0" pos="176 80 150 24" editable="0"
-            layout="33" items="" textWhenNonSelected="" textWhenNoItems="(no choices)"/>
+            layout="33" items="Natural&#10;Left to Right&#10;Right to Left"
+            textWhenNonSelected="" textWhenNoItems="(no choices)"/>
   <COMBOBOX name="cmbJustification" id="3027d58c43e6917d" memberName="cmbJustification"
             virtualName="" explicitFocusOrder="0" pos="176 112 150 24" editable="0"
-            layout="33" items="" textWhenNonSelected="" textWhenNoItems="(no choices)"/>
+            layout="33" items="Left&#10;Right&#10;Centered&#10;Justified"
+            textWhenNonSelected="" textWhenNoItems="(no choices)"/>
   <SLIDER name="slLineSpacing" id="3b1f366a073880a2" memberName="slLineSpacing"
           virtualName="" explicitFocusOrder="0" pos="176 144 150 24" min="0"
           max="10" int="0.01" style="IncDecButtons" textBoxPos="TextBoxLeft"
@@ -884,7 +897,7 @@ BEGIN_JUCER_METADATA
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <SLIDER name="slFontSize" id="9b9110caf02564d2" memberName="slFontSize"
           virtualName="" explicitFocusOrder="0" pos="464 112 150 24" min="0"
-          max="10" int="0.01" style="IncDecButtons" textBoxPos="TextBoxLeft"
+          max="256" int="0.0001" style="IncDecButtons" textBoxPos="TextBoxLeft"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"/>
   <LABEL name="lblFontSize" id="a4db4ea27a68d665" memberName="lblFontSize"
          virtualName="" explicitFocusOrder="0" pos="360 112 88 24" edTextCol="ff000000"
